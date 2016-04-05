@@ -1,23 +1,21 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
 
-const host = 'localhost';
-const port = 3000;
+const host = 'localhost'
+const port = 3000
 
 module.exports = {
-  devtool: 'eval-cheap-module-source-map',
-  devServer: { host, port, https: true },
+  // devtool: 'eval-cheap-module-source-map',
   entry: {
-    todoapp: path.join(__dirname, '../chrome/extension/todoapp'),
     background: path.join(__dirname, '../chrome/extension/background'),
-    inject: path.join(__dirname, '../chrome/extension/inject')
+    window: path.join(__dirname, '../chrome/extension/window')
   },
   output: {
     path: path.join(__dirname, '../dev/js'),
     filename: '[name].bundle.js',
-    chunkFilename: '[id].chunk.js',
-    publicPath: `https://${host}:${port}/js/`
+    chunkFilename: '[id].chunk.js'
   },
+  // context: path.join(__dirname, './'),
   plugins: [
     new webpack.NoErrorsPlugin(),
     new webpack.IgnorePlugin(/[^/]+\/[\S]+.prod$/),
@@ -36,7 +34,7 @@ module.exports = {
       loader: 'babel',
       exclude: /node_modules/,
       query: {
-        presets: ['react-hmre']
+        presets: []
       }
     }, {
       test: /\.css$/,
@@ -47,4 +45,4 @@ module.exports = {
       ]
     }]
   }
-};
+}
