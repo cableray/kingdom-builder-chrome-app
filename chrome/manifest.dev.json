@@ -1,6 +1,6 @@
 {
   "version": "0.0.1",
-  "name": "react-chrome-extension-example",
+  "name": "Kingdom Builder",
   "manifest_version": 2,
   "description": "An app to manage building a city using the pathfinder kingdom building rules",
   "app": {
@@ -11,7 +11,7 @@
   "icons": {
     "16": "img/icon-16.png",
     "48": "img/icon-48.png",
-    "128": "img/icon-128.png"
+    "128": "img/icon-new-128.png"
   },
   "permissions": [ "storage", "https://github.com/*" ]
 }

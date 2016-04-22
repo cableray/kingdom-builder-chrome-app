@@ -1,0 +1,16 @@
+.container header {
+  background-color: lightblue;
+  font-weight: bold;
+}
+header .secondary{
+  float:right;
+}
+.buildPoints {
+  text-align: right;
+}
+.buildPoints:after {
+  content: ', ';
+}
+.requiredLots {
+  text-align: right;
+}
